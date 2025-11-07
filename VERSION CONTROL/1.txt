@@ -1,0 +1,174 @@
+Git & Git Hub
+
+
+devices too sometimes, to merge diffrent programs codes are diffrent, sendiing it on whatsapp or email is not easy ,  so we need to collobrate images
+
+// solution : so we can create centeral codebase, we can add all files on these central base whenever we want, GitHub is a central Database which is done on global points while Git is a central library on our local device 
+Simply Git and GitHub is creating version contolling and managing and collobrating in project
+
+// install Git through website
+// extensions : 1.Git Blame 2.Git autoconfiug  3.GitHub Theme
+// check install or not by command " git -version"
+
+// to set Git Globally use following command in command prompt
+
+1. to set your name and email globally 
+-> git config --global user.name "name"
+-> git config --global user.email "emai;@gmail.com"
+
+2. which code editor we are using 
+when any problem in git then it will show wait command
+autocrif use to make lines on windows and mac
+-> git config --global core.editor "code--wait"
+-> git config --global core.autocrif
+
+3. use to check and change values set
+-> git config -e
+
+// Managing project with Git
+// by checking following things in front of file name
+1. U - untracked - git dont know about file, git is not managing it also represent as ??
+2. A - added or stagged - git is aware about file, git know these file exist
+3. C - commited - git tracking the file, and managing file
+
+making git available in your project
+in vs code cclick on source panel (3rd one)
+click on " intialize repository " : now vs code is managing theese project
+
+first time all files are untracked
+so make stage changes:
+go on file,  press '+' icon to make it added or stagged
+
+Creating a check point or saved point to file:
+ex. 2.txt 
+select file, right what you want to save in text box above commited
+and press commit button 
+now 2.txt is a savepoint
+now again write anything 
+you see 
+M - modified tab
+to accept changes again press'+' icon
+again it will go on stagged changes
+
+to check saved points use command
+it will tell checkpoints name and there info
+-> git log --oneline
+it will give info of particular savepoint
+-> git status -s
+one more command
+-> git log --oneline --graph
+
+git status only shows status of non commited files or get changed after commited
+git status tells about file changes and about its states before and after file commited
+git log tells all file history and savepoint and commit history 
+it tells which file is commited before
+
+** .gitignore file
+if we right name of any file in this file then git will ignore these file and never manage it
+git never recognize these file
+
+going back to previous saved point
+use command (hard, soft, mixed)  1 represents one step back, 2 represents two step reverse
+-> git reset --hard HEAD~1
+-> git reset --hard HEAD~2
+
+
+BRANCHING in Git:
+ex. there is main file in project 
+    now we had to make change in main file so we create another file heaer and provide duplicate main file to header file make necessary changes in it then entire header file and main file is merge into main file
+    header =  header + main file
+    we make necessary changes 
+    now again we merge entire header +  main file = main file
+    adding footer too main file
+    footer =   footer + main file
+    now again we merge entire footer +  main file = main file
+this is callled as BRANCHING
+
+CONFLICT GIT:
+ex. now imagine we have main file of 33 lines
+    we want to add one more file it is also 33 lines
+    now we edit main file again into 34 lines
+    also edit additional file into 34 lines
+    at that git will get confuse to  choose which file
+these confusion is called as CONFLICT
+so in conflict you can take main file, additional file , also both file
+
+creating branch:
+command
+-> git branch branchName/Additional file name
+ex. git branch feature/navbar
+-> git branch
+
+use command to select branch
+-> git switch feature/navbar
+now you are on navbar branch
+
+to merge additional file then use following command
+to merge we always should be on main file
+-> git switch main
+-> git merge feature/navbar
+
+now right diffrent code in main and navbar file of same line
+run command for merging
+you will now get CONFLICT
+now you get option
+1. accept current change
+2. accept incoming changes 
+3. accept both
+
+select one option click on it
+now again add file using + and commit changes
+
+there are many mrging techniques:
+ff, three way, squash, recursive stratergy, rebase
+
+three way merge:
+          a1 ---------a2
+         /                   central commit
+m1 --- m2 ----------- m3        
+now by combining a2, m2,m3 central is created
+a presents brach. m presents main file
+
+Fast forward merge:
+     a1------a2
+   /
+m1
+consider head at m1, now after conflict head goes to a2 in ff merge
+
+*Deleting branch command
+-> git branch -d feature/navbar
+
+
+STASHING:
+    you created one branch and you write some code in it but you nevercommit that code 
+    still you are trying to go in another branch then git will tell no save points, 
+    so changes can be delete. So you can delete changes or draft them.
+    If you draft them, changes will never get deleted nor added  it remain somewhere middle
+    you can use these changes again after you want
+
+    after getting error due to unsaved changes
+    command:
+    -> git stash
+    if you want changes again
+    -> git switch apply
+
+command:
+-> git switch -C feature/footer
+it means you are switching to branch as well as youare creating branch
+
+
+
+
+GIT HUB
+
+COMMON STEPS:
+1. main person create folder and initial file
+2. upload on git Hub
+3. Add collobraters(other team members) 
+4. collobraters should create clone of uploaded file
+5. collobraters should create own branch
+6. collobraters should write code in branch
+7. after that commit changes & push them and inform to other teammates
+8. merger(main person) checks branch and merge it and repush it
+
+these steps we are going to do on git hub by creating resporities and other things
