@@ -1,0 +1,17 @@
+{
+  "name": "node_learning",
+  "version": "1.0.0",
+  "description": " use to learn node",
+  "main": "node1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sumit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
